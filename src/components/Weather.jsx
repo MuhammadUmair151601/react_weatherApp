@@ -43,6 +43,18 @@ const Weather = () => {
             Get Weather
           </button>
         </div>
+        {weather && (
+          <div className="flex flex-col gap-2 items-center justify-center  py-3 bg-gray-700 rounded-[10px] mt-5">
+            <h1 className="text-white font-bold text-2xl"> 
+              {weather.name}, {weather.sys.country}
+              </h1>
+              <p><span className="font-semibold  text-white">Temperature : </span>{weather.main.temp}</p>
+              <p><span className="font-semibold  text-white">Feels like : </span>{weather.main.feels_like}</p>
+              <p><span className="font-semibold  text-white">Humidity : </span>{weather.main.humidity}%</p>
+              <p><span className="font-semibold  text-white">wind speed : </span>{weather.wind.speed}</p>
+              <p><span className="font-semibold  text-white">Condition : </span>{weather.weather[0].description}</p>
+          </div>
+        )}
       </div>
     </div>
   );
